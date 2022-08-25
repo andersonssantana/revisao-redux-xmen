@@ -8,14 +8,13 @@ class PageContent extends React.Component {
   }
 
   handleChange = ({ target: { name, value } }) => {
-    this.setState({
-      [name]: value,
-    });
+    this.setState({ [name]: value });
   }
 
   render() {
     const { loading, error, characters } = this.props;
     const { searchBar } = this.state;
+
     const filteredCharacters = characters
       .filter((character) => (
         character.alias.toLowerCase().includes(searchBar.toLowerCase()) ||
