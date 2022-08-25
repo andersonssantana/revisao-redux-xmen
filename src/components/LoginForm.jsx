@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate as Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import loginAction from '../redux/actions/loginActions';
 
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
   render() {
     const { inputUserName, submitted } = this.state;
     
-    if (submitted) return <Navigate to="/search" />
+    if (submitted) return <Redirect to="/search" />
     return (
       <section>
         <form>
