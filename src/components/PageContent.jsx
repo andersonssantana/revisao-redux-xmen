@@ -1,10 +1,26 @@
-import { connect } from 'react-redux';
 import React from 'react';
 import Card from './Card';
 
 class PageContent extends React.Component {
   state = {
     searchBar: '',
+    loading: false,
+    characters: [
+      {
+        id: 2,
+        name: 'Logan',
+        alias: 'Wolverine',
+        description: 'He is a member of the X-Men. He has a mysterious and confused past',
+        powers: [
+          'Healing Factor',
+          'Animal-Like Senses',
+          'Adamantium Claws and Skeleton'
+        ],
+        img: 'https://cdn.glitch.com/6137de19-12c5-43e0-9704-2252d809dcfb%2Fwolverine.png',
+        affiliation: 'X-Men',
+        created: '2020-12-26T19:48:56.843Z'
+      }
+    ]
   }
 
   handleChange = ({ target: { name, value } }) => {
@@ -12,8 +28,7 @@ class PageContent extends React.Component {
   }
 
   render() {
-    const { loading, error, characters } = this.props;
-    const { searchBar } = this.state;
+    const { searchBar, characters, loading } = this.state;
 
     const filteredCharacters = characters
       .filter((character) => (
@@ -21,7 +36,7 @@ class PageContent extends React.Component {
         character.name.toLowerCase().includes(searchBar.toLowerCase())
        ) )
 
-    if (error) console.error(error);
+    // if (error) console.error(error);
 
     return (
       <div className="contentContainer">
@@ -51,12 +66,4 @@ class PageContent extends React.Component {
   }
 }
 
-const mapStateToProps = ({ charactersReducer }) => {
-  return ({
-    characters: charactersReducer.characters,
-    loading: charactersReducer.loading,
-    error: charactersReducer.error,
-  })
-}
-
-export default connect(mapStateToProps)(PageContent);
+export default PageContent;

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Navigate as Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import loginAction from '../redux/actions/loginActions';
 
 class LoginForm extends React.Component {
   state = {
@@ -16,9 +14,6 @@ class LoginForm extends React.Component {
   }
 
   handleClick = () => {
-    const { inputUserName } = this.state;
-    const { submitUserInfo } = this.props;
-    submitUserInfo(inputUserName);
     this.setState({ submitted: true });
   }
 
@@ -56,8 +51,4 @@ class LoginForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  submitUserInfo: (username) => dispatch(loginAction(username)),
-})
-
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default LoginForm;
