@@ -7,17 +7,29 @@ class PageContent extends React.Component {
     loading: false,
     characters: [
       {
-        id: 2,
-        name: 'Logan',
-        alias: 'Wolverine',
-        description: 'He is a member of the X-Men. He has a mysterious and confused past',
+        id: 1,
+        name: 'Ander Santana',
+        alias: 'Ander',
+        description: 'Ihhhh alá, o Ander tá achando que faz parte dos X-Men...',
         powers: [
-          'Healing Factor',
-          'Animal-Like Senses',
-          'Adamantium Claws and Skeleton'
+          'Mentoria de revisão',
+          'Criação de background de Zoom',
         ],
-        img: 'https://cdn.glitch.com/6137de19-12c5-43e0-9704-2252d809dcfb%2Fwolverine.png',
-        affiliation: 'X-Men',
+        img: 'https://i.imgur.com/Eif3vow.png',
+        affiliation: 'Trybe',
+        created: '2020-12-26T19:48:56.843Z'
+      },
+      {
+        id: 2,
+        name: 'Marcelo Pessini',
+        alias: 'Pessini',
+        description: 'É, galera. O nome do Pessini é Marcelo mesmo.',
+        powers: [
+          'Mentoria de revisão',
+          'Olhos de águia',
+        ],
+        img: 'https://i.imgur.com/5PvTite.png',
+        affiliation: 'Trybe',
         created: '2020-12-26T19:48:56.843Z'
       }
     ]
@@ -28,7 +40,7 @@ class PageContent extends React.Component {
   }
 
   render() {
-    const { searchBar, characters, loading } = this.state;
+    const { searchBar, characters = [], loading } = this.state;
 
     const filteredCharacters = characters
       .filter((character) => (

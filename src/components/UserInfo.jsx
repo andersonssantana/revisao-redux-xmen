@@ -2,7 +2,7 @@ import React from 'react';
 
 class UserInfo extends React.Component {
   render() {
-    const { username = 'usuário(a)' } = this.props;
+    const { username = 'undefined' } = this.props;
     return (
       <h1>Bem vindo(a) { username }</h1>
     )
