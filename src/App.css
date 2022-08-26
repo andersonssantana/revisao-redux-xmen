@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+input {
+  color: white;
+  background-color: grey;
+  margin-top: 0.2rem;
+  border: none;
+  padding: 0.4rem;
+  border-bottom: 1px solid white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainLogin {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: grey;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  color: yellow;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form label {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+
+
+input::placeholder {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  border: grey;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: rgb(49, 47, 47);
+  color: yellow;
+  padding: 0.2rem 0.8rem;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: black;
 }
+
+.slogan {
+  color: rgba(211, 207, 207, 0.849);
+  text-align: center;
+}
+
+.charactersMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: grey;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.searchBarContainer {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.cardsContainer {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.card {
+  width: 14rem;
+  height: 28rem;
+  background-color: grey;
+  padding: 1rem 1.4rem;
+  border-radius: 3px;
+  border: 2px solid yellow;
+}
+
+.xMenName {
+  display: block;
+  font-weight: 800;
+  color: yellow;
+  width: 100%;
+  background-color: rgb(49, 47, 47);
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.2rem 0;
+  text-shadow: 0.2px 0.2px 0.8px red;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.nameContainer {
+  border-bottom: 1px solid grey;
+  padding: 0.2rem 0;
+  margin: 0.2rem 0;
+}
+
+.nameContainer .firstChild {
+  color: red;
+}
+
+.powersContainer {
+  border-bottom: 1px solid grey;
+  padding: 0.2rem 0;
+  margin: 0.2rem 0;
+}
+
+.powersContainer .firstChild {
+  color: red;
+}
+
+.powersContainer .secondChild {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.powersContainer .secondChild::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 8px;
+  border-bottom: 1px solid white;
+}
+
+.powersContainer .secondChild::-webkit-scrollbar {
+  height: 0.4rem;
+  background: grey;
+  margin: 0.4rem;
+}
+
+.powersContainer .secondChild::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+.powersContainer .secondChild .powers {
+  background-color: yellow;
+  color: red;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+}
+
+.descriptionContainer {
+  background-color: rgb(49, 47, 47);
+  height: 6rem;
+  padding: 0.2rem 0.8rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+  border-radius: 3px 8px 8px 3px;
+  border: 2px solid black;
+}
+
+.descriptionContainer::-webkit-scrollbar-track {
+  background-color: rgb(49, 47, 47);
+  border-radius: 8px;
+}
+
+.descriptionContainer::-webkit-scrollbar {
+  background: rgb(49, 47, 47);
+  margin: 0.4rem;
+  width: 0.4rem;
+}
+
+.descriptionContainer::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 8px;
+}
+
+.descriptionContainer .secondChild {
+  text-align: justify;
+  color: yellow;
+}
+
