@@ -52,6 +52,17 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 50%;
+  color: grey;
+}
+
+button:disabled:hover {
+  opacity: 50%;
+  color: grey;
+  background-color: rgb(49, 47, 47);
+}
+
 button:hover {
   background-color: black;
 }
