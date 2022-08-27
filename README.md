@@ -2,7 +2,7 @@
 
 Para realizar o projeto, atente-se a cada passo descrito a seguir.
 
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica para colocar seus códigos. Para fins didáticos, a resolução completa está na branch `gabarito`.
 
 # Entregáveis
 
@@ -268,6 +268,8 @@ revisao-redux-xmen
 
 * A sua action para login deve ser criada no arquivo `src/redux/actions/loginActions.js`;
 
+* 💡 *Dica:* você pode colocar o type da sua action em uma constante e exportá-la;
+
 * <details><summary> Você deve criar a action da seguinte forma:</summary>
 
   - A action deve receber um payload;
@@ -277,29 +279,60 @@ revisao-redux-xmen
 
 ---
 
-## 7. Crie suas actions para a tela dos personagens
+## 7. Prepare o seu LoginForm para escrever no estado global
+
+* O seu componente `LoginForm` deve ser capaz de *salvar* as informações de usuário no estado global;
+
+* <details><summary> Você deve conectar o componente ao estado global da seguinte forma:</summary>
+
+  - Você deve importar o `connect` de `react-redux`;
+  - O componente fará uma operação de *escrita* no estado. Para isso, você pode usar o `mapDispatchToProps`;
+  - 💡 *Dica:* O `mapDispatchToProps` é o segundo parâmetro do `connect`;
+  - 💡 *Dica:* O `mapDispatchToProps` é uma função que recebe `dispatch` e retorna um objeto que será mapeado para `props`;
+  - Já existe uma função `handleClick` no componente. Você deve utilizá-la para dar um dispatch na action desejada;
+  - A action deve ser exportada como `default`.
+
+---
+
+## 8. Prepare o seu UserInfo para ler o estado global
+
+* O seu componente `UserInfo` deve ser capaz de *ler* as informações de usuário do estado global;
+
+* <details><summary> Você deve conectar o componente ao estado global da seguinte forma:</summary>
+
+  - Você deve importar o `connect` de `react-redux`;
+  - O componente fará uma operação de *leitura* no estado. Para isso, você deve usar o `mapStateToProps`;
+  - 💡 *Dica:* O `mapStateToProps` é o primeiro parâmetro do `connect`;
+  - 💡 *Dica:* O `mapStateToProps` é uma função que recebe o estado global e retorna um objeto que será mapeado para `props`;
+  - O componente deverá receber como `props` a chave `username` do reducer de login.
+
+---
+
+## 9. Crie suas actions para a tela dos personagens
 
 * As suas actions para personagens devem ser criadas no arquivo `src/redux/actions/charactersActions.js`;
+
+* 💡 *Dica:* você pode colocar o type das suas actions em constantes e exportá-las;
 
 * <details><summary> Você deve criar a action de requisição da seguinte forma:</summary>
 
   - A action não precisa de um payload;
   - A action deve possuir o type `'REQUEST_CHARACTERS'`;
-  - 💡 *Dica:* Esta action apenas vai setar o loading do estado global para `true`;
+  - 💡 *Dica:* Esta action apenas vai setar o loading do estado global para `true`.
 
 * <details><summary> Você deve criar a action de salvar os personagens da seguinte forma:</summary>
 
   - A action deve receber um payload;
   - A action deve possuir o type `'SAVE_CHARACTERS'`;
   - A action deve encaminhar o payload;
-  - 💡 *Dica:* Esta action vai receber os dados do fetch e salva-los no estado global;
+  - 💡 *Dica:* Esta action vai receber os dados do fetch e salva-los no estado global.
 
 * <details><summary> Você deve criar a action de erro da seguinte forma:</summary>
 
   - A action deve receber um payload;
   - A action deve possuir o type `'FAILED_REQUEST'`;
   - A action deve encaminhar o payload;
-  - 💡 *Dica:* Esta action vai receber uma mensagem de erro, caso exista e seja disparada pelo thunk, e salvá-la no estado global;
+  - 💡 *Dica:* Esta action vai receber uma mensagem de erro, caso exista e seja disparada pelo thunk, e salvá-la no estado global.
 
 * <details><summary> Você deve criar a action thunk da seguinte forma:</summary>
 
@@ -308,7 +341,47 @@ revisao-redux-xmen
   - O _thunk_ deve disparar a action `'REQUEST_CHARACTERS'`;
   - O _thunk_ deve tentar fazer uma requisição assíncrona. A função `fetchCharacters()` deve ser chamada nesta requisição;
   - Após a requisição, o _thunk_ deve disparar a action `'SAVE_CHARACTERS'`, encaminhando nela o payload com os dados obtidos;
-  - Caso a tentativa da requisição falhe, o _thunk_ deve capturar o erro e disparar a action `'FAILED_REQUEST'`, encaminhando nela o payload com o erro obtido.
+  - Caso a tentativa da requisição falhe, o _thunk_ deve capturar o erro e disparar a action `'FAILED_REQUEST'`, encaminhando nela o payload com o erro obtido;
+  - O _thunk_ deve ser exportado como `default`.
 
 ---
 
+## 10. Prepare o seu XMenPage para escrever no estado global
+
+* O seu componente `XMenPage` deve ser capaz de *salvar* as informações de usuário no estado global;
+
+* <details><summary> Você deve conectar o componente ao estado global da seguinte forma:</summary>
+
+  - Você deve importar o `connect` de `react-redux`;
+  - O componente fará uma operação de *escrita* no estado. Para isso, você pode usar o `mapDispatchToProps`;
+  - 💡 *Dica:* O `mapDispatchToProps` é o segundo parâmetro do `connect`;
+  - 💡 *Dica:* O `mapDispatchToProps` é uma função que recebe `dispatch` e retorna um objeto que será mapeado para `props`;
+  - Ao carregar a página, o componente vai disparar o _thunk_ que fará a requisição para a API.
+
+---
+
+## 11. Prepare o seu PageContent para ler o estado global
+
+* O seu componente `PageContent` deve ser capaz de *ler* as informações de usuário do estado global;
+
+* <details><summary> Você deve conectar o componente ao estado global da seguinte forma:</summary>
+
+  - Você deve importar o `connect` de `react-redux`;
+  - O componente fará uma operação de *leitura* no estado. Para isso, você deve usar o `mapStateToProps`;
+  - 💡 *Dica:* O `mapStateToProps` é o primeiro parâmetro do `connect`;
+  - 💡 *Dica:* O `mapStateToProps` é uma função que recebe o estado global e retorna um objeto que será mapeado para `props`;
+  - O componente deverá receber como `props` as três chaves do reducer de personagens: `characters`, `loading` e `error`;
+  - O componente deverá renderizar os cards de personagens de acordo com o que receber em `characters`.
+
+---
+
+
+# Requisitos bônus (opcionais)
+
+---
+
+## 12. Crie uma validação para o nome de usuário na tela de login
+
+## 13. Crie um campo de password com validação na tela de login
+
+## 14. Crie testes para a aplicação
