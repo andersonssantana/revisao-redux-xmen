@@ -90,7 +90,7 @@ Neste projeto, verificamos se você é capaz de:
   charactersReducer: {
     characters: [],
     loading: true,
-    error: ''
+    error: undefined,
   }
 }
 ```
@@ -239,7 +239,7 @@ revisao-redux-xmen
   {
     characters: [],
     loading: true,
-    error: '',
+    error: undefined,
   }
   ```
 
