@@ -8,9 +8,7 @@ class LoginForm extends React.Component {
   }
 
   handleChange = ({ target: { name, value } }) => {
-    this.setState({
-      [name]: value,
-    });
+    this.setState({ [name]: value });
   }
 
   handleClick = () => {
