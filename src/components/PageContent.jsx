@@ -5,8 +5,6 @@ import mockData from '../mockData';
 class PageContent extends React.Component {
   state = {
     searchBar: '',
-    loading: false,
-    characters: [...mockData],
   }
 
   handleChange = ({ target: { name, value } }) => {
@@ -14,7 +12,8 @@ class PageContent extends React.Component {
   }
 
   render() {
-    const { searchBar, characters, loading } = this.state;
+    const { searchBar } = this.state;
+    const { characters = [...mockData], loading = false } = this.props;
 
     const filteredCharacters = characters
       .filter((character) => (
