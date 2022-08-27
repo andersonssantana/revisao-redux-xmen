@@ -125,7 +125,7 @@ Neste projeto, verificamos se você é capaz de:
 
   O retorno desse endpoint será algo no formato:
 
-```json
+```js
 {
   "results": [
     {
@@ -214,7 +214,7 @@ revisao-redux-xmen
 
   - O estado inicial do reducer deve ser no seguinte formato:
 
-  ```json
+  ```js
   {
     username: '',
   }
@@ -235,7 +235,7 @@ revisao-redux-xmen
 
   - O estado inicial do reducer deve ser no seguinte formato:
 
-  ```json
+  ```js
   {
     characters: [],
     loading: true,
