@@ -4,7 +4,7 @@ import { Navigate as Redirect } from 'react-router-dom';
 class LoginForm extends React.Component {
   state = {
     inputUserName: '',
-    submitted: false
+    submitted: false,
   }
 
   handleChange = ({ target: { name, value } }) => {
