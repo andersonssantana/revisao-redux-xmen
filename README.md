@@ -39,17 +39,21 @@ Neste projeto, verificamos se você é capaz de:
 <details>
   <summary><strong>‼️ Antes de começar a desenvolver</strong></summary><br />
 
-  1. Clone o repositório
+  1. Crie um fork deste repositório
 
-  - Use o comando: `git clone git@github.com:andersonssantana/revisao-redux-xmen.git`.
+  - Crie um fork deste projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
+  
+  2. Clone o repositório
+
+  - Use o comando: `git clone` para clonar o repositório após o fork.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd revisao-redux-xmen`
 
-  2. Instale as dependências
+  3. Instale as dependências
 
   - `npm install`.
   
-  3. Crie uma branch a partir da branch `main`
+  4. Crie uma branch a partir da branch `main`
 
   - Verifique que você está na branch `main`
     - Exemplo: `git branch`
