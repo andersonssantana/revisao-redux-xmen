@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class UserInfo extends React.Component {
   render() {
@@ -11,5 +12,13 @@ class UserInfo extends React.Component {
     );
   }
 }
+
+UserInfo.propTypes = {
+  username: PropTypes.string,
+};
+
+UserInfo.defaultProps = {
+  username: 'undefined',
+};
 
 export default UserInfo;

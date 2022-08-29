@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import mockData from '../mockData';
 
@@ -13,7 +14,7 @@ class PageContent extends React.Component {
 
   render() {
     const { searchBar } = this.state;
-    const { characters = [...mockData], loading = false } = this.props;
+    const { characters = [...mockData], loading = false, error = '' } = this.props;
 
     const filteredCharacters = characters
       .filter((character) => (
@@ -21,7 +22,7 @@ class PageContent extends React.Component {
         || character.name.toLowerCase().includes(searchBar.toLowerCase())
       ));
 
-    // if (error) console.error(error);
+    if (error) console.error(error);
 
     return (
       <div className="contentContainer">
@@ -50,5 +51,17 @@ class PageContent extends React.Component {
     );
   }
 }
+
+PageContent.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.shape({})),
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+};
+
+PageContent.defaultProps = {
+  characters: [...mockData],
+  loading: false,
+  error: '',
+};
 
 export default PageContent;
