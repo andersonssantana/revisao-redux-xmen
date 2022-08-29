@@ -1,0 +1,4 @@
+export const LOG_IN = 'LOG_IN';
+export const REQUEST_CHARACTERS = 'REQUEST_CHARACTERS';
+export const FAILED_REQUEST = 'FAILED_REQUEST';
+export const SAVE_CHARACTERS = 'SAVE_CHARACTERS';

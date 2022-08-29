@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import mockData from '../mockData';
@@ -64,4 +65,10 @@ PageContent.defaultProps = {
   error: '',
 };
 
-export default PageContent;
+const mapStateToProps = (state) => ({
+  characters: state.charactersReducer.characters,
+  loading: state.charactersReducer.loading,
+  error: state.charactersReducer.error,
+});
+
+export default connect(mapStateToProps)(PageContent);
