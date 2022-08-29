@@ -7,6 +7,7 @@ class UserInfo extends React.Component {
     return (
       <h1>
         Bem vindo(a)
+        {' '}
         { username }
       </h1>
     );
