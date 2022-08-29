@@ -14,7 +14,7 @@ class PageContent extends React.Component {
 
   render() {
     const { searchBar } = this.state;
-    const { characters = [...mockData], loading = false, error = '' } = this.props;
+    const { characters, loading, error } = this.props;
 
     const filteredCharacters = characters
       .filter((character) => (

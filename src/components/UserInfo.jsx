@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class UserInfo extends React.Component {
   render() {
-    const { username = 'undefined' } = this.props;
+    const { username } = this.props;
     return (
       <h1>
         Bem vindo(a)
