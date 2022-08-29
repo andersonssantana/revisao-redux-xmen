@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
@@ -35,5 +36,18 @@ class Card extends React.Component {
     );
   }
 }
+
+Card.propTypes = {
+  card: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    alias: PropTypes.string.isRequired,
+    powers: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Card;
