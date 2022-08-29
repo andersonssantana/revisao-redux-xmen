@@ -5,6 +5,7 @@ import charactersReducer from './charactersReducer';
 
 /* const rootReducer = combineReducers({
   login: loginReducer,
+  xmen: charactersReducer,
 });
 
 export default rootReducer; */
