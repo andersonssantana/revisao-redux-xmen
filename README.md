@@ -194,9 +194,11 @@ revisao-redux-xmen
 
 ---
 
-## 2. Crie a store
+## 2. Crie e disponibilize a store
 
 * A sua store deve ser criada no arquivo `src/redux/store/index.js`;
+
+* Disponibilize a sua store para a aplicação com um provider;
 
 * <details><summary> Você deve criar uma store da seguinte forma:</summary>
 
