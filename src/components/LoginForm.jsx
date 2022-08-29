@@ -5,20 +5,20 @@ class LoginForm extends React.Component {
   state = {
     inputUserName: '',
     submitted: false,
-  }
+  };
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
   handleClick = () => {
     this.setState({ submitted: true });
-  }
+  };
 
   render() {
     const { inputUserName, submitted } = this.state;
-    
-    if (submitted) return <Redirect to="/search" />
+
+    if (submitted) return <Redirect to="/search" />;
     return (
       <section>
         <form>

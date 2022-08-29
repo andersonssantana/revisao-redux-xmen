@@ -10,7 +10,7 @@ const mockData = [
     ],
     img: 'https://i.imgur.com/Eif3vow.png',
     affiliation: 'Trybe',
-    created: '2020-12-26T19:48:56.843Z'
+    created: '2020-12-26T19:48:56.843Z',
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const mockData = [
     ],
     img: 'https://i.imgur.com/5PvTite.png',
     affiliation: 'Trybe',
-    created: '2020-12-26T19:48:56.843Z'
-  }
-]
+    created: '2020-12-26T19:48:56.843Z',
+  },
+];
 
 export default mockData;

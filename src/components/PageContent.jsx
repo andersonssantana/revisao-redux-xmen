@@ -5,11 +5,11 @@ import mockData from '../mockData';
 class PageContent extends React.Component {
   state = {
     searchBar: '',
-  }
+  };
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
   render() {
     const { searchBar } = this.state;
@@ -17,9 +17,9 @@ class PageContent extends React.Component {
 
     const filteredCharacters = characters
       .filter((character) => (
-        character.alias.toLowerCase().includes(searchBar.toLowerCase()) ||
-        character.name.toLowerCase().includes(searchBar.toLowerCase())
-       ) )
+        character.alias.toLowerCase().includes(searchBar.toLowerCase())
+        || character.name.toLowerCase().includes(searchBar.toLowerCase())
+      ));
 
     // if (error) console.error(error);
 
@@ -41,13 +41,13 @@ class PageContent extends React.Component {
               <p>
                 Carregando...
               </p>
-             ) : (
+            ) : (
               filteredCharacters.map((card) => <Card key={ card.id } card={ card } />)
             )
           }
         </section>
       </div>
-    )
+    );
   }
 }
 

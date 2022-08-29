@@ -13,13 +13,17 @@ class Card extends React.Component {
           <span>{ card.name }</span>
         </div>
         <div className="powersContainer">
-          <span className="firstChild">Poderes:<br /></span>
+          <span className="firstChild">
+            Poderes:
+            <br />
+          </span>
           <div className="secondChild">
             {
               typeof card.powers === 'string' ? (
                 <span className="powers">{ card.powers }</span>
               ) : (
-                card.powers.map((power) => <span className="powers" key={ power }>{ power }</span>)
+                card.powers
+                  .map((power) => <span className="powers" key={ power }>{ power }</span>)
               )
             }
           </div>
