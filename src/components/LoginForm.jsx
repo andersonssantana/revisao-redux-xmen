@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Navigate as Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import loginAction from '../redux/actions/loginActions';
 
 class LoginForm extends React.Component {
   state = {
@@ -12,7 +15,18 @@ class LoginForm extends React.Component {
   };
 
   handleClick = () => {
+    const { inputUserName } = this.state;
+    // const { dispatch } = this.props;
+    // dispatch(loginAction(inputUserName));
+    const { logUser } = this.props;
+    logUser(inputUserName);
     this.setState({ submitted: true });
+  };
+
+  validateButton = () => {
+    const { inputUserName } = this.state;
+    const minLength = 3;
+    return inputUserName.length > minLength;
   };
 
   render() {
@@ -37,6 +51,7 @@ class LoginForm extends React.Component {
           <button
             type="button"
             onClick={ this.handleClick }
+            disabled={ !this.validateButton() }
           >
             Entrar
           </button>
@@ -49,4 +64,12 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+LoginForm.propTypes = {
+  logUser: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  logUser: (inputUserName) => dispatch(loginAction(inputUserName)),
+});
+
+export default connect(null, mapDispatchToProps)(LoginForm);

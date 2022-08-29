@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class UserInfo extends React.Component {
   render() {
@@ -15,11 +16,15 @@ class UserInfo extends React.Component {
 }
 
 UserInfo.propTypes = {
-  username: PropTypes.string,
+  username: PropTypes.string.isRequired,
 };
 
-UserInfo.defaultProps = {
+/* UserInfo.defaultProps = {
   username: 'undefined',
-};
+}; */
 
-export default UserInfo;
+const mapStateToProps = (state) => ({
+  username: state.login.username,
+});
+
+export default connect(mapStateToProps)(UserInfo);

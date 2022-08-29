@@ -1,7 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Card from './Card';
-import mockData from '../mockData';
 
 class PageContent extends React.Component {
   state = {
@@ -59,9 +59,15 @@ PageContent.propTypes = {
 };
 
 PageContent.defaultProps = {
-  characters: [...mockData],
+  characters: [],
   loading: false,
   error: '',
 };
 
-export default PageContent;
+const mapStateToProps = (state) => ({
+  loading: state.xmen.loading,
+  characters: state.xmen.characters,
+  error: state.xmen.error,
+});
+
+export default connect(mapStateToProps)(PageContent);
