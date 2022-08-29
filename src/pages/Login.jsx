@@ -1,10 +1,10 @@
-import React from "react";
-import LoginForm from "../components/LoginForm";
-import Title from "../components/Title";
+import React from 'react';
+import LoginForm from '../components/LoginForm';
+import Title from '../components/Title';
 
 class Login extends React.Component {
   render() {
-    return(
+    return (
       <main className="mainLogin">
         <Title />
         <LoginForm />
