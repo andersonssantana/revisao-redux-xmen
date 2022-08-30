@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes as Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login';
 import XMenList from './pages/XMenPage';
@@ -9,8 +9,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" element={ <Login /> } />
-          <Route path="/search" element={ <XMenList /> } />
+          <Route exact path="/" component={ Login } /* element={ <Login /> } */ />
+          <Route path="/search" component={ XMenList } /* element={ <XMenList /> } */ />
         </Switch>
       </div>
     );

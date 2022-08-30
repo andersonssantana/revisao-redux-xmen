@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Card from './Card';
 import mockData from '../mockData';
 
@@ -52,6 +53,12 @@ class PageContent extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  characters: state.characterReducer.character,
+  loading: state.characterReducer.loading,
+  error: state.characterReducer.error,
+});
+
 PageContent.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.shape({})),
   loading: PropTypes.bool,
@@ -64,4 +71,4 @@ PageContent.defaultProps = {
   error: '',
 };
 
-export default PageContent;
+export default connect(mapStateToProps)(PageContent);
